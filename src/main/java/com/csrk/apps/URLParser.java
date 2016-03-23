@@ -15,6 +15,8 @@ public class URLParser {
 		System.out.println("The path in url is: "+urlString.getPath());
 		
 		System.out.println("The path in url is: "+urlString.getResource());
+		
+		urlString.showSegments();
 	}
 
 }
