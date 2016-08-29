@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.csrk</groupId>
-  <artifactId>javasamples</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>javasamples</name>
-  <description>The Java Examples</description>
-  
-  	<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.csrk</groupId>
+	<artifactId>javasamples</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>javasamples</name>
+	<description>The Java Examples</description>
+
+	<properties>
 		<final-name>autotools</final-name>
 		<webapp-directory>\Tomcat\apache-tomcat-7.0.39\webapps</webapp-directory>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,13 +33,8 @@
 		<javax-mail-version>1.4.5</javax-mail-version>
 		<spring-test-version>4.0.5.RELEASE</spring-test-version>
 	</properties>
-		<build>
+	<build>
 		<finalName>${final-name}</finalName>
-		<resources>
-			<resource>
-				<directory>src/main/config/log</directory>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -47,6 +43,26 @@
 					<source>${jdk-version}</source>
 					<target>${jdk-version}</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.csrk.apps.CatApp</mainClass>
+							<arguments>
+								<argument>arg0</argument>
+								<argument>arg1</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
