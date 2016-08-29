@@ -66,4 +66,25 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<!-- start log frameworks -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-classic-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- end log frameworks -->
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+	</dependencies>	
 </project>
