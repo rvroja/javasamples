@@ -39,10 +39,7 @@
 			<resource>
 				<directory>src/main/config/log</directory>
 			</resource>
-			<resource>
-				<directory>src/main/config/test</directory>
-			</resource>
-		</resources>
+		</resources>		
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -52,20 +49,36 @@
 					<target>${jdk-version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.csrk.apps.StringApp</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
+		<!-- start log frameworks -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>1.3.2</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.8</version>
-			<scope>test</scope>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-classic-version}</version>
 		</dependency>
-
+		<!-- end log frameworks -->
 	</dependencies>
 </project>
