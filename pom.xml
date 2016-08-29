@@ -39,7 +39,7 @@
 			<resource>
 				<directory>src/main/config/log</directory>
 			</resource>
-		</resources>		
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -60,7 +60,11 @@
 							<goal>java</goal>
 						</goals>
 						<configuration>
-							<mainClass>com.csrk.apps.CatApp</mainClass>
+							<mainClass>com.csrk.apps.FileUtilApp</mainClass>
+							<arguments>
+								<!-- path of the file name -->
+								<argument>/home/schituku/sample.txt</argument>
+							</arguments>
 						</configuration>
 					</execution>
 				</executions>
@@ -70,10 +74,14 @@
 	<dependencies>
 		<!-- start log frameworks -->
 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${logback-classic-version}</version>
-			<scope>runtime</scope>
 		</dependency>
 		<!-- end log frameworks -->
 
@@ -87,5 +95,5 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-	</dependencies>	
+	</dependencies>
 </project>

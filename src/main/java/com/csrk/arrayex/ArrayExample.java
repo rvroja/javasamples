@@ -37,5 +37,9 @@ public class ArrayExample {
 			System.out.println(i);
 		}
 	}
+	
+	public int getMember(int index){
+		return numbers[index];
+	}
 
 }
