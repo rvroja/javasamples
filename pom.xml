@@ -35,6 +35,11 @@
 	</properties>
 	<build>
 		<finalName>${final-name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/config/log</directory>
+			</resource>
+		</resources>		
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -56,10 +61,6 @@
 						</goals>
 						<configuration>
 							<mainClass>com.csrk.apps.CatApp</mainClass>
-							<arguments>
-								<argument>arg0</argument>
-								<argument>arg1</argument>
-							</arguments>
 						</configuration>
 					</execution>
 				</executions>
