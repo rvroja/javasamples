@@ -32,13 +32,8 @@
 		<javax-mail-version>1.4.5</javax-mail-version>
 		<spring-test-version>4.0.5.RELEASE</spring-test-version>
 	</properties>
-		<build>
+<build>
 		<finalName>${final-name}</finalName>
-		<resources>
-			<resource>
-				<directory>src/main/config/log</directory>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -47,6 +42,26 @@
 					<source>${jdk-version}</source>
 					<target>${jdk-version}</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.csrk.apps.CatApp</mainClass>
+							<arguments>
+								<argument>arg0</argument>
+								<argument>arg1</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
