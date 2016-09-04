@@ -4,7 +4,7 @@
 <suite name="TestNgTestSuite">
 	<test name="TestNgTests">
 		<classes>
-			<class name="com.csrk.javasamples.tests.TestMonthFinder" />
+			<class name="com.csrk.javasamples.tests.TestFileUtils" />
 		</classes>
 	</test>
 </suite>  	
